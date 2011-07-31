@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @tv_show.name %>
+</p>
+
+<p>
+  <b>Season:</b>
+  <%= @tv_show.season %>
+</p>
+
+<p>
+  <b>Currently on:</b>
+  <%= @tv_show.currently_on %>
+</p>
+
+<p>
+  <b>Channel:</b>
+  <%= @tv_show.channel_id %>
+</p>
+
+<p>
+  <b>Last on:</b>
+  <%= @tv_show.last_on.strftime("%b %Y") %>
+</p>
+
+<p>
+  <b>US season:</b>
+  <%= @tv_show.us_season %>
+</p>
+
+
+<%= link_to 'Edit', edit_tv_show_path(@tv_show) %> |
+<%= link_to 'All shows', tv_shows_path %>

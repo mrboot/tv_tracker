@@ -1,4 +1,15 @@
 TvTracker::Application.routes.draw do
+  # get "channel/index"
+  # 
+  # get "channel/new"
+  # 
+  # get "channel/edit"
+
+  resources :channels
+  resources :tv_shows
+  
+  root :to => 'tv_shows#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,42 @@
+<%= form_for(@tv_show) do |f| %>
+  <% if @tv_show.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tv_show.errors.count, "error") %> prohibited this Show from being saved:</h2>
+
+      <ul>
+      <% @tv_show.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :season %><br />
+    <%= f.number_field :season, :size => 5 %>
+  </div>
+  <div class="field">
+    <%= f.label :currently_on %>:
+    <%= f.check_box :currently_on  %>
+  </div>
+  <div class="field">
+    <%= f.label :channel_id %><br />
+		<%= f.collection_select :channel_id, @channels, :channel_no, :name %>
+    <%= f.number_field :channel_id, :in => 101...999,:size => 10 %>
+  </div>
+  <div class="field">
+    <%= f.label :last_on %><br />
+    <%= f.date_select :last_on, :order => [:month, :year] %>
+  </div>
+  <div class="field">
+    US Season<br />
+    <%= f.number_field :us_season, :size => 5 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
