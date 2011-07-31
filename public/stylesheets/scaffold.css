@@ -1,0 +1,104 @@
+body { 
+	background-color: #ffffee; 
+	color: black;
+}
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+h1 {
+	color: #001177;
+	text-decoration: underline;
+	margin: 45px;
+}
+
+#newspaper-b {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 12px;
+	margin: 45px;
+/*	width: 480px;*/
+	text-align: left;
+	border-collapse: collapse;
+	border: 1px solid #69c;
+}
+
+#newspaper-b th {
+	padding: 15px 10px 10px 10px;
+	font-weight: normal;
+	font-size: 14px;
+	text-align: center;
+	background: #b9c9fe;
+	color: #039;
+}
+
+#newspaper-b tbody {
+	background: #e8edff;
+}
+
+#newspaper-b td {
+	padding: 10px;
+	color: #669;
+	text-align: center;
+	border-top: 1px dashed #fff;
+}
+
+#name td {
+	text-align: left;
+}
+
+#newspaper-b tbody tr:hover td {
+	color: #339;
+	background: #d0dafd;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}

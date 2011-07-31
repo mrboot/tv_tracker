@@ -1,0 +1,40 @@
+<h1>TV Shows</h1>
+
+<table id="newspaper-b" summary="List of all my TV Shows">
+	<thead>
+	  <tr>
+	    <th scope ="col">Name</th>
+	    <th scope ="col">Channel</th>
+	    <th scope ="col">Season</th>
+	    <th scope ="col">Currently on</th>
+	    <th scope ="col">Last on</th>
+	    <th scope ="col">US season</th>
+	    <th scope ="col"></th>
+	    <th scope ="col"></th>
+	  </tr>
+	</thead>
+
+<% @tv_shows.each do |tv_show| %>
+  <tr>
+    <td id="name"><%= tv_show.name %></td>
+    <td><%= tv_show.channel.name %></td>
+    <td><%= tv_show.season %></td>
+    <td>
+			<% if tv_show.currently_on.blank? %>
+				No
+			<% else %>
+				Yes
+			<% end %>
+		</td>
+    <td><%= tv_show.last_on.strftime("%b %Y") %></td>
+    <td><%= tv_show.us_season %></td>
+    <td><%= link_to 'Edit', edit_tv_show_path(tv_show) %></td>
+    <td><%= link_to 'Delete', tv_show, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= button_to 'New Show', new_tv_show_path %><br />
+<%= link_to 'Go to Channels', channels_path %>
