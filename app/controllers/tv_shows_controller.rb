@@ -10,17 +10,6 @@ class TvShowsController < ApplicationController
     end
   end
 
-  # GET /tv_shows/1
-  # GET /tv_shows/1.xml
-  def show
-    @tv_show = TvShow.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @tv_show }
-    end
-  end
-
   # GET /tv_shows/new
   # GET /tv_shows/new.xml
   def new

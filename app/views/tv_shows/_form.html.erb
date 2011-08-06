@@ -26,7 +26,6 @@
   <div class="field">
     <%= f.label :channel_id %><br />
 		<%= f.collection_select :channel_id, @channels, :channel_no, :name %>
-    <%= f.number_field :channel_id, :in => 101...999,:size => 10 %>
   </div>
   <div class="field">
     <%= f.label :last_on %><br />

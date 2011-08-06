@@ -19,12 +19,13 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe TvShowsController do
+  
 
   # This should return the minimal set of attributes required to create a valid
   # TvShow. As you add validations to TvShow, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {:name => 'Foo',  :season => 1, :currently_on => false, :channel_id => 107, :last_on => '2011-06-01', :us_season => 1}
   end
 
   describe "GET index" do
@@ -32,14 +33,6 @@ describe TvShowsController do
       tv_show = TvShow.create! valid_attributes
       get :index
       assigns(:tv_shows).should eq([tv_show])
-    end
-  end
-
-  describe "GET show" do
-    it "assigns the requested tv_show as @tv_show" do
-      tv_show = TvShow.create! valid_attributes
-      get :show, :id => tv_show.id.to_s
-      assigns(:tv_show).should eq(tv_show)
     end
   end
 
@@ -72,9 +65,9 @@ describe TvShowsController do
         assigns(:tv_show).should be_persisted
       end
 
-      it "redirects to the created tv_show" do
+      it "redirects to the TV show index page" do
         post :create, :tv_show => valid_attributes
-        response.should redirect_to(TvShow.last)
+        response.should redirect_to(tv_shows_url)
       end
     end
 
@@ -113,10 +106,10 @@ describe TvShowsController do
         assigns(:tv_show).should eq(tv_show)
       end
 
-      it "redirects to the tv_show" do
+      it "redirects to the TV shows index" do
         tv_show = TvShow.create! valid_attributes
         put :update, :id => tv_show.id, :tv_show => valid_attributes
-        response.should redirect_to(tv_show)
+        response.should redirect_to(tv_shows_url)
       end
     end
 
