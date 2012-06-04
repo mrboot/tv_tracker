@@ -1,16 +1,17 @@
 require 'spec_helper'
 
-describe Channel do
+describe Planner do
   pending "add some examples to (or delete) #{__FILE__}"
 end
 
 # == Schema Information
 #
-# Table name: channels
+# Table name: planners
 #
 #  id         :integer         not null, primary key
-#  name       :string(255)
-#  channel_no :integer
+#  day        :string(255)
+#  start_time :time
+#  tv_show_id :integer
 #  created_at :datetime
 #  updated_at :datetime
 #

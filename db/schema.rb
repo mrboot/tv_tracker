@@ -10,11 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730154051) do
+ActiveRecord::Schema.define(:version => 20120430172706) do
 
   create_table "channels", :force => true do |t|
     t.string   "name"
     t.integer  "channel_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "planners", :force => true do |t|
+    t.string   "day"
+    t.time     "start_time"
+    t.integer  "tv_show_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

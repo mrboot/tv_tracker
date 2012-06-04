@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :channel_id %><br />
-		<%= f.collection_select :channel_id, @channels, :channel_no, :name %>
+		<%= f.collection_select :channel_id, channel_list, :channel_no, :name %>
   </div>
   <div class="field">
     <%= f.label :last_on %><br />

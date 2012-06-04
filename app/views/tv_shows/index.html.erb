@@ -26,7 +26,10 @@
 				Yes
 			<% end %>
 		</td>
-    <td><%= tv_show.last_on.strftime("%b %Y") %></td>
+    <td>
+			<%= last_on_text tv_show %>
+
+		</td>
     <td><%= tv_show.us_season %></td>
     <td><%= link_to 'Edit', edit_tv_show_path(tv_show) %></td>
     <td><%= link_to 'Delete', tv_show, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -36,5 +39,5 @@
 
 <br />
 
-<%= button_to 'New Show', new_tv_show_path %><br />
+<%= button_to 'New Show',{ :controller => "tv_shows", :action => "new" }, :method => :get %><br />
 <%= link_to 'Go to Channels', channels_path %>

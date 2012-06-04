@@ -24,8 +24,6 @@ class TvShowsController < ApplicationController
   # GET /tv_shows/1/edit
   def edit
     @tv_show = TvShow.find(params[:id])
-    
-    @channels = Channel.find(:all, :order => :name)
   end
 
   # POST /tv_shows
